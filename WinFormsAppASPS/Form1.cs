@@ -5,6 +5,7 @@ namespace WinFormsAppASPS
     public partial class Form1 : Form
     {
         Form2 fr2 = new Form2();
+        Form3 fr3 = new Form3();
         String fullPath = Application.StartupPath.ToString();
         bool dis_red = false; // дисквалификация крас
         bool dis_blue = false; // дисквалификация синему
@@ -15,11 +16,15 @@ namespace WinFormsAppASPS
         int advBlue = 0;
         int min_1 = 4;
         int sec_1 = 60;
-        int secInContest = 0;  //скунд в поединке
+        int secInContest = 0;  //секунд в поединке
         string weightFromFile = string.Empty; // вес из имени файла
+
+
+        public static Form1 SelfRef { get; set; } // ссылка для управления из формы 3
 
         public Form1()
         {
+            SelfRef = this;   // инициализация ссылки для управления 
             InitializeComponent();
         }
 
@@ -27,9 +32,9 @@ namespace WinFormsAppASPS
         public void AddToFileProtokol(string a_1 = "", string a_2 = "")
         {
             string path = fullPath + "protokol/protokol_" + weightFromFile + ".log";
-            string timeSport = ") t_:" + fr2.label_timer_min.Text + ":" + fr2.label_timer_sec.Text;
-            string redSport = fr2.label_red_name.Text + " r score_: " + fr2.label_red_score.Text + " (" + a_1 + timeSport + "\n";
-            string blueSport = fr2.label_blue_name.Text + " b score_: " + fr2.label_blue_score.Text + " (" + a_2 + timeSport + "\n";
+            string timeSport = fr2.label_timer_min.Text + ":" + fr2.label_timer_sec.Text;
+            string redSport = timeSport + " " + fr2.label_red_name.Text + " red score_: " + fr2.label_red_score.Text + " (" + a_1 + ")" + "\n";
+            string blueSport = timeSport + " " + fr2.label_blue_name.Text + " blue score_: " + fr2.label_blue_score.Text + " (" + a_2 + ")" + "\n";
             string createText = redSport + blueSport;
             File.AppendAllText(path, createText);
         }
@@ -56,7 +61,7 @@ namespace WinFormsAppASPS
             // sec_1 = int.Parse(textBox2.Text);
             secInContest = int.Parse(textBox1.Text) * 60 + int.Parse(textBox2.Text);
         }
-        private void showForm2()
+        public void showForm2()
         {
             //Screen[] sc;
             //sc = Screen.AllScreens;
@@ -370,14 +375,15 @@ namespace WinFormsAppASPS
 
         private void button_winner_Click(object sender, EventArgs e)
         {
-            show_panel_win(fr2.label_red_name.Text);
-            AddToFileWinner(fr2.label_red_name.Text, "");
+            fr3.Show();
+            fr3.radioButtonBlueWin.Text = fr2.label_blue_name.Text;
+            fr3.radioButtonRedWin.Text = fr2.label_red_name.Text;
+
         }
 
         private void button_winner_blue_Click(object sender, EventArgs e)
         {
-            show_panel_win(fr2.label_blue_name.Text);
-            AddToFileWinner("", fr2.label_blue_name.Text);
+
         }
 
         private void buttonTimerReset_Click(object sender, EventArgs e)
@@ -462,7 +468,7 @@ namespace WinFormsAppASPS
         {
             advBlue += 1;
             fr2.panelAdvantecBlue.Visible = true;
-            fr2.labelAdvanBlue.Text = advRed.ToString();
+            fr2.labelAdvanBlue.Text = advBlue.ToString();
             AddToFileProtokol("", "Adantec " + advBlue.ToString());
         }
 
@@ -495,8 +501,28 @@ namespace WinFormsAppASPS
                 vpause = false;
                 fr2.labelAdvanRed.Text = "0";
                 fr2.labelAdvanBlue.Text = "0";
+                fr2.panelAdvantecBlue.Visible = false;
+                fr2.panelAdvantecRed.Visible = false;
                 advBlue = 0;
                 advRed = 0;
+                button_blue_d2.Enabled = false;
+                button_blue_d3.Enabled = false;
+                button_red_d2.Enabled = false;
+                button_red_d3.Enabled = false;
+            }
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            string dateOnlyString = DateTime.Now.ToString("dd");
+            int dt = int.Parse(dateOnlyString);
+            if (dt > 10 & dt < 5) {
+                DialogResult result = MessageBox.Show(
+      "Время использования технической версии программы закончилось",
+      "Всё",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Error);
+                Application.Exit();
             }
         }
     }

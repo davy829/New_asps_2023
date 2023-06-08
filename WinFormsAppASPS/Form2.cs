@@ -13,9 +13,12 @@ namespace WinFormsAppASPS
     public partial class Form2 : Form
     {
         int wievPanelWinner = 3;
-        String fullPath = Application.StartupPath.ToString();
+       // String fullPath = Application.StartupPath.ToString();
+        public static Form2 SelfRef2 { get; set; }
+
         public Form2()
         {
+            SelfRef2 = this;
             InitializeComponent();
         }
 
