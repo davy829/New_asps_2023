@@ -28,109 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label_weight = new Label();
+            label_red_name = new Label();
+            label_red_score = new Label();
             panel2 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            label_blue_name = new Label();
+            label_blue_score = new Label();
+            panel_timer = new Panel();
+            label_timer_sec = new Label();
+            label_timer_separator = new Label();
+            label_timer_min = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel_timer.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label_weight);
+            panel1.Controls.Add(label_red_name);
+            panel1.Controls.Add(label_red_score);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 226);
             panel1.TabIndex = 0;
             // 
+            // label_weight
+            // 
+            label_weight.AutoSize = true;
+            label_weight.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            label_weight.ForeColor = SystemColors.ButtonFace;
+            label_weight.Location = new Point(520, 70);
+            label_weight.Name = "label_weight";
+            label_weight.Size = new Size(107, 86);
+            label_weight.TabIndex = 2;
+            label_weight.Text = "52";
+            // 
+            // label_red_name
+            // 
+            label_red_name.AutoSize = true;
+            label_red_name.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            label_red_name.ForeColor = SystemColors.ButtonHighlight;
+            label_red_name.Location = new Point(307, 115);
+            label_red_name.Name = "label_red_name";
+            label_red_name.Size = new Size(123, 72);
+            label_red_name.TabIndex = 1;
+            label_red_name.Text = "red";
+            // 
+            // label_red_score
+            // 
+            label_red_score.BackColor = Color.Red;
+            label_red_score.BorderStyle = BorderStyle.FixedSingle;
+            label_red_score.FlatStyle = FlatStyle.Popup;
+            label_red_score.Font = new Font("Arial", 120F, FontStyle.Bold, GraphicsUnit.Point);
+            label_red_score.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
+            label_red_score.Location = new Point(16, 13);
+            label_red_score.Margin = new Padding(0);
+            label_red_score.MaximumSize = new Size(275, 174);
+            label_red_score.Name = "label_red_score";
+            label_red_score.Size = new Size(263, 174);
+            label_red_score.TabIndex = 0;
+            label_red_score.Text = "0";
+            label_red_score.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(12, 244);
+            panel2.Controls.Add(label_blue_name);
+            panel2.Controls.Add(label_blue_score);
+            panel2.Location = new Point(12, 282);
             panel2.Name = "panel2";
             panel2.Size = new Size(776, 207);
             panel2.TabIndex = 1;
             // 
-            // label1
+            // label_blue_name
             // 
-            label1.BackColor = Color.Red;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Arial", 120F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            label1.Location = new Point(16, 13);
-            label1.Margin = new Padding(0);
-            label1.MaximumSize = new Size(275, 174);
-            label1.Name = "label1";
-            label1.Size = new Size(263, 174);
-            label1.TabIndex = 0;
-            label1.Text = "01";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label_blue_name.AutoSize = true;
+            label_blue_name.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            label_blue_name.ForeColor = SystemColors.ButtonHighlight;
+            label_blue_name.Location = new Point(307, 125);
+            label_blue_name.Name = "label_blue_name";
+            label_blue_name.Size = new Size(152, 72);
+            label_blue_name.TabIndex = 2;
+            label_blue_name.Text = "blue";
             // 
-            // label2
+            // label_blue_score
             // 
-            label2.BackColor = Color.Blue;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.FlatStyle = FlatStyle.Popup;
-            label2.Font = new Font("Arial", 120F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(16, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(263, 183);
-            label2.TabIndex = 1;
-            label2.Text = "01";
+            label_blue_score.BackColor = Color.Blue;
+            label_blue_score.BorderStyle = BorderStyle.FixedSingle;
+            label_blue_score.FlatStyle = FlatStyle.Popup;
+            label_blue_score.Font = new Font("Arial", 120F, FontStyle.Bold, GraphicsUnit.Point);
+            label_blue_score.Location = new Point(16, 14);
+            label_blue_score.Name = "label_blue_score";
+            label_blue_score.Size = new Size(263, 183);
+            label_blue_score.TabIndex = 1;
+            label_blue_score.Text = "0";
             // 
-            // label3
+            // panel_timer
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(345, 127);
-            label3.Name = "label3";
-            label3.Size = new Size(123, 72);
-            label3.TabIndex = 1;
-            label3.Text = "red";
+            panel_timer.BackColor = SystemColors.ActiveCaptionText;
+            panel_timer.Controls.Add(label_timer_sec);
+            panel_timer.Controls.Add(label_timer_separator);
+            panel_timer.Controls.Add(label_timer_min);
+            panel_timer.ForeColor = SystemColors.ButtonHighlight;
+            panel_timer.Location = new Point(319, 253);
+            panel_timer.Name = "panel_timer";
+            panel_timer.Size = new Size(409, 151);
+            panel_timer.TabIndex = 2;
             // 
-            // label4
+            // label_timer_sec
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(326, 125);
-            label4.Name = "label4";
-            label4.Size = new Size(152, 72);
-            label4.TabIndex = 2;
-            label4.Text = "blue";
+            label_timer_sec.AutoSize = true;
+            label_timer_sec.Font = new Font("Arial", 125.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_timer_sec.ForeColor = SystemColors.ButtonHighlight;
+            label_timer_sec.Location = new Point(175, -23);
+            label_timer_sec.Name = "label_timer_sec";
+            label_timer_sec.Size = new Size(266, 190);
+            label_timer_sec.TabIndex = 2;
+            label_timer_sec.Text = "59";
+            // 
+            // label_timer_separator
+            // 
+            label_timer_separator.AutoSize = true;
+            label_timer_separator.Font = new Font("Arial", 125.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_timer_separator.ForeColor = SystemColors.ButtonHighlight;
+            label_timer_separator.Location = new Point(102, -38);
+            label_timer_separator.Name = "label_timer_separator";
+            label_timer_separator.Size = new Size(136, 190);
+            label_timer_separator.TabIndex = 1;
+            label_timer_separator.Text = ":";
+            // 
+            // label_timer_min
+            // 
+            label_timer_min.AutoSize = true;
+            label_timer_min.Font = new Font("Arial", 125.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_timer_min.ForeColor = SystemColors.ButtonHighlight;
+            label_timer_min.Location = new Point(-19, -21);
+            label_timer_min.Name = "label_timer_min";
+            label_timer_min.Size = new Size(173, 190);
+            label_timer_min.TabIndex = 0;
+            label_timer_min.Text = "4";
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 482);
+            Controls.Add(panel_timer);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Text = "Form2";
+            Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel_timer.ResumeLayout(false);
+            panel_timer.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Label label3;
-        private Label label1;
         private Panel panel2;
-        private Label label2;
-        private Label label4;
+        private Panel panel_timer;
+        private Label label_timer_separator;
+        public System.Windows.Forms.Timer timer1;
+        public Label label_red_name;
+        public Label label_red_score;
+        public Label label_blue_score;
+        public Label label_blue_name;
+        public Label label_timer_sec;
+        public Label label_timer_min;
+        public Label label_weight;
     }
 }
