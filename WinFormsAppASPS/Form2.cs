@@ -12,11 +12,23 @@ namespace WinFormsAppASPS
 {
     public partial class Form2 : Form
     {
+        int min_1 = 4;
+        int sec_1 = 60;
+        String fullPath = Application.StartupPath.ToString();
         public Form2()
         {
             InitializeComponent();
         }
+        public void Add_to_file(string a_1 = "", string a_2 = "")
+        {
+            string path = fullPath + "/output.txt";
+            string timeSport = "* t_:" + label_timer_min.Text + ":" + label_timer_sec.Text;
+            string redSport = label_red_name.Text + " r score_:" + label_red_score.Text + " *" + a_1 + timeSport + "\n";
+            string blueSport = label_blue_name.Text + " b score_:" + label_blue_score.Text + " *" + a_2 + timeSport + "\n";
 
+            string createText = redSport + blueSport;
+            File.AppendAllText(path, createText);
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             panel1.Width = this.Width;
@@ -33,6 +45,22 @@ namespace WinFormsAppASPS
             label_blue_name.Top = panel2.Height / 2 - label_blue_name.Height / 2;
             label_weight.Left = this.Width - label_weight.Width - 50;
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+            sec_1 = sec_1 - 1;
+            label_timer_sec.Text = sec_1.ToString();
+            if (sec_1 == 1)
+            {
+                sec_1 = 60;
+                int min_1 = int.Parse(label_timer_min.Text) - 1;
+                if (min_1 == 0)
+                { timer1.Enabled = false; }
+                label_timer_min.Text = min_1.ToString();
+            }
         }
     }
 }

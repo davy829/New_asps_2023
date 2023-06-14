@@ -43,29 +43,29 @@
             checkBox6 = new CheckBox();
             button13 = new Button();
             button14 = new Button();
-            button15 = new Button();
-            button16 = new Button();
-            button17 = new Button();
-            button18 = new Button();
-            button19 = new Button();
-            button20 = new Button();
-            button21 = new Button();
-            button22 = new Button();
+            button_four_bal_blue_min = new Button();
+            button_three_bal_blue_min = new Button();
+            button_two_bal_blue_min = new Button();
+            button_one_bal_blue_min = new Button();
+            button_four_bal_blue = new Button();
+            button_three_bal_blue = new Button();
+            button_two_bal_blue = new Button();
+            button_one_bal_blue = new Button();
             panel3 = new Panel();
             panel4 = new Panel();
-            checkBox1 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
+            button_red_d3 = new Button();
+            button_red_d2 = new Button();
+            button_red_d1 = new Button();
             button12 = new Button();
             button11 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
+            button_four_bal_red_min = new Button();
+            button_othree_bal_red_min = new Button();
+            button_two_bal_red_min = new Button();
+            button_one_bal_red_min = new Button();
+            button_four_bal_red = new Button();
+            button_three_bal_red = new Button();
+            button_two_bal_red = new Button();
+            button_one_bal_red = new Button();
             panel7 = new Panel();
             panel9 = new Panel();
             label5 = new Label();
@@ -75,10 +75,10 @@
             textBox1 = new TextBox();
             panel8 = new Panel();
             label3 = new Label();
-            button24 = new Button();
+            button_timer_pause = new Button();
             label2 = new Label();
             label1 = new Label();
-            button23 = new Button();
+            button_start_timer = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -105,9 +105,9 @@
             // 
             // button_add_files
             // 
-            button_add_files.Location = new Point(421, 223);
+            button_add_files.Location = new Point(472, 223);
             button_add_files.Name = "button_add_files";
-            button_add_files.Size = new Size(114, 42);
+            button_add_files.Size = new Size(70, 42);
             button_add_files.TabIndex = 4;
             button_add_files.Text = "Добавить файлы весов";
             button_add_files.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             // 
             button_add_sportsmen.Location = new Point(3, 223);
             button_add_sportsmen.Name = "button_add_sportsmen";
-            button_add_sportsmen.Size = new Size(412, 42);
+            button_add_sportsmen.Size = new Size(460, 42);
             button_add_sportsmen.TabIndex = 3;
             button_add_sportsmen.Text = "Добавить спорсменов и включить экран";
             button_add_sportsmen.UseVisualStyleBackColor = true;
@@ -127,28 +127,30 @@
             // 
             listBox_files_weit.FormattingEnabled = true;
             listBox_files_weit.ItemHeight = 15;
-            listBox_files_weit.Location = new Point(421, 3);
+            listBox_files_weit.Location = new Point(472, 3);
             listBox_files_weit.Name = "listBox_files_weit";
-            listBox_files_weit.Size = new Size(114, 214);
+            listBox_files_weit.Size = new Size(70, 214);
             listBox_files_weit.TabIndex = 2;
             listBox_files_weit.Click += listBox_files_weit_Click;
             // 
             // listBox_blue_names
             // 
+            listBox_blue_names.ForeColor = Color.Blue;
             listBox_blue_names.FormattingEnabled = true;
             listBox_blue_names.ItemHeight = 15;
-            listBox_blue_names.Location = new Point(213, 3);
+            listBox_blue_names.Location = new Point(233, 3);
             listBox_blue_names.Name = "listBox_blue_names";
-            listBox_blue_names.Size = new Size(202, 214);
+            listBox_blue_names.Size = new Size(230, 214);
             listBox_blue_names.TabIndex = 1;
             // 
             // listBox_red_names
             // 
+            listBox_red_names.ForeColor = Color.Red;
             listBox_red_names.FormattingEnabled = true;
             listBox_red_names.ItemHeight = 15;
             listBox_red_names.Location = new Point(3, 3);
             listBox_red_names.Name = "listBox_red_names";
-            listBox_red_names.Size = new Size(204, 214);
+            listBox_red_names.Size = new Size(224, 214);
             listBox_red_names.TabIndex = 0;
             // 
             // panel2
@@ -167,14 +169,14 @@
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(button13);
             panel5.Controls.Add(button14);
-            panel5.Controls.Add(button15);
-            panel5.Controls.Add(button16);
-            panel5.Controls.Add(button17);
-            panel5.Controls.Add(button18);
-            panel5.Controls.Add(button19);
-            panel5.Controls.Add(button20);
-            panel5.Controls.Add(button21);
-            panel5.Controls.Add(button22);
+            panel5.Controls.Add(button_four_bal_blue_min);
+            panel5.Controls.Add(button_three_bal_blue_min);
+            panel5.Controls.Add(button_two_bal_blue_min);
+            panel5.Controls.Add(button_one_bal_blue_min);
+            panel5.Controls.Add(button_four_bal_blue);
+            panel5.Controls.Add(button_three_bal_blue);
+            panel5.Controls.Add(button_two_bal_blue);
+            panel5.Controls.Add(button_one_bal_blue);
             panel5.Location = new Point(220, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(186, 228);
@@ -243,85 +245,93 @@
             button14.Text = "WINNER";
             button14.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // button_four_bal_blue_min
             // 
-            button15.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.Location = new Point(140, 43);
-            button15.Name = "button15";
-            button15.Size = new Size(40, 35);
-            button15.TabIndex = 8;
-            button15.Text = "-4";
-            button15.UseVisualStyleBackColor = true;
+            button_four_bal_blue_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_four_bal_blue_min.Location = new Point(140, 43);
+            button_four_bal_blue_min.Name = "button_four_bal_blue_min";
+            button_four_bal_blue_min.Size = new Size(40, 35);
+            button_four_bal_blue_min.TabIndex = 8;
+            button_four_bal_blue_min.Text = "-4";
+            button_four_bal_blue_min.UseVisualStyleBackColor = true;
+            button_four_bal_blue_min.Click += button_four_bal_blue_min_Click;
             // 
-            // button16
+            // button_three_bal_blue_min
             // 
-            button16.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button16.Location = new Point(94, 43);
-            button16.Name = "button16";
-            button16.Size = new Size(40, 35);
-            button16.TabIndex = 7;
-            button16.Text = "-3";
-            button16.UseVisualStyleBackColor = true;
+            button_three_bal_blue_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_three_bal_blue_min.Location = new Point(94, 43);
+            button_three_bal_blue_min.Name = "button_three_bal_blue_min";
+            button_three_bal_blue_min.Size = new Size(40, 35);
+            button_three_bal_blue_min.TabIndex = 7;
+            button_three_bal_blue_min.Text = "-3";
+            button_three_bal_blue_min.UseVisualStyleBackColor = true;
+            button_three_bal_blue_min.Click += button_three_bal_blue_min_Click;
             // 
-            // button17
+            // button_two_bal_blue_min
             // 
-            button17.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button17.Location = new Point(48, 43);
-            button17.Name = "button17";
-            button17.Size = new Size(40, 35);
-            button17.TabIndex = 6;
-            button17.Text = "-2";
-            button17.UseVisualStyleBackColor = true;
+            button_two_bal_blue_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_two_bal_blue_min.Location = new Point(48, 43);
+            button_two_bal_blue_min.Name = "button_two_bal_blue_min";
+            button_two_bal_blue_min.Size = new Size(40, 35);
+            button_two_bal_blue_min.TabIndex = 6;
+            button_two_bal_blue_min.Text = "-2";
+            button_two_bal_blue_min.UseVisualStyleBackColor = true;
+            button_two_bal_blue_min.Click += button_two_bal_blue_min_Click;
             // 
-            // button18
+            // button_one_bal_blue_min
             // 
-            button18.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button18.Location = new Point(3, 43);
-            button18.Name = "button18";
-            button18.Size = new Size(40, 35);
-            button18.TabIndex = 5;
-            button18.Text = "-1";
-            button18.UseVisualStyleBackColor = true;
+            button_one_bal_blue_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_one_bal_blue_min.Location = new Point(3, 43);
+            button_one_bal_blue_min.Name = "button_one_bal_blue_min";
+            button_one_bal_blue_min.Size = new Size(40, 35);
+            button_one_bal_blue_min.TabIndex = 5;
+            button_one_bal_blue_min.Text = "-1";
+            button_one_bal_blue_min.UseVisualStyleBackColor = true;
+            button_one_bal_blue_min.Click += button_one_bal_blue_min_Click;
             // 
-            // button19
+            // button_four_bal_blue
             // 
-            button19.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button19.Location = new Point(140, 2);
-            button19.Name = "button19";
-            button19.Size = new Size(40, 35);
-            button19.TabIndex = 4;
-            button19.Text = "+4";
-            button19.UseVisualStyleBackColor = true;
+            button_four_bal_blue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_four_bal_blue.Location = new Point(140, 2);
+            button_four_bal_blue.Name = "button_four_bal_blue";
+            button_four_bal_blue.Size = new Size(40, 35);
+            button_four_bal_blue.TabIndex = 4;
+            button_four_bal_blue.Text = "+4";
+            button_four_bal_blue.UseVisualStyleBackColor = true;
+            button_four_bal_blue.Click += button_four_bal_blue_Click;
             // 
-            // button20
+            // button_three_bal_blue
             // 
-            button20.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button20.Location = new Point(94, 2);
-            button20.Name = "button20";
-            button20.Size = new Size(40, 35);
-            button20.TabIndex = 3;
-            button20.Text = "+3";
-            button20.UseVisualStyleBackColor = true;
+            button_three_bal_blue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_three_bal_blue.Location = new Point(94, 2);
+            button_three_bal_blue.Name = "button_three_bal_blue";
+            button_three_bal_blue.Size = new Size(40, 35);
+            button_three_bal_blue.TabIndex = 3;
+            button_three_bal_blue.Text = "+3";
+            button_three_bal_blue.UseVisualStyleBackColor = true;
+            button_three_bal_blue.Click += button_three_bal_blue_Click;
             // 
-            // button21
+            // button_two_bal_blue
             // 
-            button21.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button21.Location = new Point(48, 2);
-            button21.Name = "button21";
-            button21.Size = new Size(40, 35);
-            button21.TabIndex = 2;
-            button21.Text = "+2";
-            button21.UseVisualStyleBackColor = true;
+            button_two_bal_blue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_two_bal_blue.Location = new Point(48, 2);
+            button_two_bal_blue.Name = "button_two_bal_blue";
+            button_two_bal_blue.Size = new Size(40, 35);
+            button_two_bal_blue.TabIndex = 2;
+            button_two_bal_blue.Text = "+2";
+            button_two_bal_blue.UseVisualStyleBackColor = true;
+            button_two_bal_blue.Click += button_two_bal_blue_Click;
             // 
-            // button22
+            // button_one_bal_blue
             // 
-            button22.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button22.Location = new Point(3, 2);
-            button22.Name = "button22";
-            button22.Size = new Size(40, 35);
-            button22.TabIndex = 1;
-            button22.Text = "+1";
-            button22.UseVisualStyleBackColor = true;
+            button_one_bal_blue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_one_bal_blue.Location = new Point(3, 2);
+            button_one_bal_blue.Name = "button_one_bal_blue";
+            button_one_bal_blue.Size = new Size(40, 35);
+            button_one_bal_blue.TabIndex = 1;
+            button_one_bal_blue.Text = "+1";
+            button_one_bal_blue.UseVisualStyleBackColor = true;
+            button_one_bal_blue.Click += button_one_bal_blue_Click;
             // 
             // panel3
             // 
@@ -329,14 +339,14 @@
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(button12);
             panel3.Controls.Add(button11);
-            panel3.Controls.Add(button7);
-            panel3.Controls.Add(button8);
-            panel3.Controls.Add(button9);
-            panel3.Controls.Add(button10);
-            panel3.Controls.Add(button6);
-            panel3.Controls.Add(button5);
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button_four_bal_red_min);
+            panel3.Controls.Add(button_othree_bal_red_min);
+            panel3.Controls.Add(button_two_bal_red_min);
+            panel3.Controls.Add(button_one_bal_red_min);
+            panel3.Controls.Add(button_four_bal_red);
+            panel3.Controls.Add(button_three_bal_red);
+            panel3.Controls.Add(button_two_bal_red);
+            panel3.Controls.Add(button_one_bal_red);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(186, 228);
@@ -345,45 +355,45 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(checkBox1);
-            panel4.Controls.Add(checkBox3);
-            panel4.Controls.Add(checkBox2);
+            panel4.Controls.Add(button_red_d3);
+            panel4.Controls.Add(button_red_d2);
+            panel4.Controls.Add(button_red_d1);
             panel4.Location = new Point(3, 89);
             panel4.Name = "panel4";
             panel4.Size = new Size(177, 31);
             panel4.TabIndex = 1;
             // 
-            // checkBox1
+            // button_red_d3
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 6);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(52, 19);
-            checkBox1.TabIndex = 1;
-            checkBox1.Text = "DIS 1";
-            checkBox1.UseVisualStyleBackColor = true;
+            button_red_d3.Enabled = false;
+            button_red_d3.Location = new Point(118, 2);
+            button_red_d3.Name = "button_red_d3";
+            button_red_d3.Size = new Size(54, 23);
+            button_red_d3.TabIndex = 2;
+            button_red_d3.Text = "DIS 3";
+            button_red_d3.UseVisualStyleBackColor = true;
+            button_red_d3.Click += button_red_d3_Click;
             // 
-            // checkBox3
+            // button_red_d2
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Enabled = false;
-            checkBox3.Location = new Point(118, 6);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(52, 19);
-            checkBox3.TabIndex = 10;
-            checkBox3.Text = "DIS 1";
-            checkBox3.UseVisualStyleBackColor = true;
+            button_red_d2.Enabled = false;
+            button_red_d2.Location = new Point(60, 2);
+            button_red_d2.Name = "button_red_d2";
+            button_red_d2.Size = new Size(54, 23);
+            button_red_d2.TabIndex = 1;
+            button_red_d2.Text = "DIS 2";
+            button_red_d2.UseVisualStyleBackColor = true;
+            button_red_d2.Click += button_red_d2_Click;
             // 
-            // checkBox2
+            // button_red_d1
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Enabled = false;
-            checkBox2.Location = new Point(59, 6);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(52, 19);
-            checkBox2.TabIndex = 9;
-            checkBox2.Text = "DIS 1";
-            checkBox2.UseVisualStyleBackColor = true;
+            button_red_d1.Location = new Point(2, 2);
+            button_red_d1.Name = "button_red_d1";
+            button_red_d1.Size = new Size(54, 23);
+            button_red_d1.TabIndex = 0;
+            button_red_d1.Text = "DIS 1";
+            button_red_d1.UseVisualStyleBackColor = true;
+            button_red_d1.Click += button_red_d1_Click;
             // 
             // button12
             // 
@@ -405,92 +415,100 @@
             button11.Text = "WINNER";
             button11.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button_four_bal_red_min
             // 
-            button7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(140, 43);
-            button7.Name = "button7";
-            button7.Size = new Size(40, 35);
-            button7.TabIndex = 8;
-            button7.Text = "-4";
-            button7.UseVisualStyleBackColor = true;
+            button_four_bal_red_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_four_bal_red_min.Location = new Point(140, 43);
+            button_four_bal_red_min.Name = "button_four_bal_red_min";
+            button_four_bal_red_min.Size = new Size(40, 35);
+            button_four_bal_red_min.TabIndex = 8;
+            button_four_bal_red_min.Text = "-4";
+            button_four_bal_red_min.UseVisualStyleBackColor = true;
+            button_four_bal_red_min.Click += button_four_bal_red_min_Click;
             // 
-            // button8
+            // button_othree_bal_red_min
             // 
-            button8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(94, 43);
-            button8.Name = "button8";
-            button8.Size = new Size(40, 35);
-            button8.TabIndex = 7;
-            button8.Text = "-3";
-            button8.UseVisualStyleBackColor = true;
+            button_othree_bal_red_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_othree_bal_red_min.Location = new Point(94, 43);
+            button_othree_bal_red_min.Name = "button_othree_bal_red_min";
+            button_othree_bal_red_min.Size = new Size(40, 35);
+            button_othree_bal_red_min.TabIndex = 7;
+            button_othree_bal_red_min.Text = "-3";
+            button_othree_bal_red_min.UseVisualStyleBackColor = true;
+            button_othree_bal_red_min.Click += button_othree_bal_red_min_Click;
             // 
-            // button9
+            // button_two_bal_red_min
             // 
-            button9.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(48, 43);
-            button9.Name = "button9";
-            button9.Size = new Size(40, 35);
-            button9.TabIndex = 6;
-            button9.Text = "-2";
-            button9.UseVisualStyleBackColor = true;
+            button_two_bal_red_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_two_bal_red_min.Location = new Point(48, 43);
+            button_two_bal_red_min.Name = "button_two_bal_red_min";
+            button_two_bal_red_min.Size = new Size(40, 35);
+            button_two_bal_red_min.TabIndex = 6;
+            button_two_bal_red_min.Text = "-2";
+            button_two_bal_red_min.UseVisualStyleBackColor = true;
+            button_two_bal_red_min.Click += button_two_bal_red_min_Click;
             // 
-            // button10
+            // button_one_bal_red_min
             // 
-            button10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(3, 43);
-            button10.Name = "button10";
-            button10.Size = new Size(40, 35);
-            button10.TabIndex = 5;
-            button10.Text = "-1";
-            button10.UseVisualStyleBackColor = true;
+            button_one_bal_red_min.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_one_bal_red_min.Location = new Point(3, 43);
+            button_one_bal_red_min.Name = "button_one_bal_red_min";
+            button_one_bal_red_min.Size = new Size(40, 35);
+            button_one_bal_red_min.TabIndex = 5;
+            button_one_bal_red_min.Text = "-1";
+            button_one_bal_red_min.UseVisualStyleBackColor = true;
+            button_one_bal_red_min.Click += button_one_bal_red_min_Click;
             // 
-            // button6
+            // button_four_bal_red
             // 
-            button6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(140, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(40, 35);
-            button6.TabIndex = 4;
-            button6.Text = "+4";
-            button6.UseVisualStyleBackColor = true;
+            button_four_bal_red.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_four_bal_red.Location = new Point(140, 2);
+            button_four_bal_red.Name = "button_four_bal_red";
+            button_four_bal_red.Size = new Size(40, 35);
+            button_four_bal_red.TabIndex = 4;
+            button_four_bal_red.Text = "+4";
+            button_four_bal_red.UseVisualStyleBackColor = true;
+            button_four_bal_red.Click += button_four_bal_red_Click;
             // 
-            // button5
+            // button_three_bal_red
             // 
-            button5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(94, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(40, 35);
-            button5.TabIndex = 3;
-            button5.Text = "+3";
-            button5.UseVisualStyleBackColor = true;
+            button_three_bal_red.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_three_bal_red.Location = new Point(94, 2);
+            button_three_bal_red.Name = "button_three_bal_red";
+            button_three_bal_red.Size = new Size(40, 35);
+            button_three_bal_red.TabIndex = 3;
+            button_three_bal_red.Text = "+3";
+            button_three_bal_red.UseVisualStyleBackColor = true;
+            button_three_bal_red.Click += button_three_bal_red_Click;
             // 
-            // button4
+            // button_two_bal_red
             // 
-            button4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(48, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(40, 35);
-            button4.TabIndex = 2;
-            button4.Text = "+2";
-            button4.UseVisualStyleBackColor = true;
+            button_two_bal_red.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_two_bal_red.Location = new Point(48, 2);
+            button_two_bal_red.Name = "button_two_bal_red";
+            button_two_bal_red.Size = new Size(40, 35);
+            button_two_bal_red.TabIndex = 2;
+            button_two_bal_red.Text = "+2";
+            button_two_bal_red.UseVisualStyleBackColor = true;
+            button_two_bal_red.Click += button_two_bal_red_Click;
             // 
-            // button3
+            // button_one_bal_red
             // 
-            button3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(40, 35);
-            button3.TabIndex = 1;
-            button3.Text = "+1";
-            button3.UseVisualStyleBackColor = true;
+            button_one_bal_red.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button_one_bal_red.Location = new Point(3, 2);
+            button_one_bal_red.Name = "button_one_bal_red";
+            button_one_bal_red.Size = new Size(40, 35);
+            button_one_bal_red.TabIndex = 1;
+            button_one_bal_red.Text = "+1";
+            button_one_bal_red.UseVisualStyleBackColor = true;
+            button_one_bal_red.Click += button_one_bal_red_Click;
             // 
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(panel9);
             panel7.Controls.Add(panel8);
-            panel7.Controls.Add(button23);
+            panel7.Controls.Add(button_start_timer);
             panel7.Location = new Point(435, 299);
             panel7.Name = "panel7";
             panel7.Size = new Size(124, 226);
@@ -560,7 +578,7 @@
             // 
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(label3);
-            panel8.Controls.Add(button24);
+            panel8.Controls.Add(button_timer_pause);
             panel8.Controls.Add(label2);
             panel8.Controls.Add(label1);
             panel8.Location = new Point(4, 89);
@@ -578,14 +596,15 @@
             label3.TabIndex = 2;
             label3.Text = "60";
             // 
-            // button24
+            // button_timer_pause
             // 
-            button24.Location = new Point(44, 2);
-            button24.Name = "button24";
-            button24.Size = new Size(62, 25);
-            button24.TabIndex = 1;
-            button24.Text = "ПАУЗА";
-            button24.UseVisualStyleBackColor = true;
+            button_timer_pause.Location = new Point(44, 2);
+            button_timer_pause.Name = "button_timer_pause";
+            button_timer_pause.Size = new Size(62, 25);
+            button_timer_pause.TabIndex = 1;
+            button_timer_pause.Text = "ПАУЗА";
+            button_timer_pause.UseVisualStyleBackColor = true;
+            button_timer_pause.Click += button_timer_pause_Click;
             // 
             // label2
             // 
@@ -607,16 +626,17 @@
             label1.TabIndex = 0;
             label1.Text = "5";
             // 
-            // button23
+            // button_start_timer
             // 
-            button23.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button23.ForeColor = Color.Red;
-            button23.Location = new Point(3, 4);
-            button23.Name = "button23";
-            button23.Size = new Size(116, 75);
-            button23.TabIndex = 0;
-            button23.Text = "СТАРТ";
-            button23.UseVisualStyleBackColor = true;
+            button_start_timer.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button_start_timer.ForeColor = Color.Red;
+            button_start_timer.Location = new Point(3, 4);
+            button_start_timer.Name = "button_start_timer";
+            button_start_timer.Size = new Size(116, 75);
+            button_start_timer.TabIndex = 0;
+            button_start_timer.Text = "СТАРТ";
+            button_start_timer.UseVisualStyleBackColor = true;
+            button_start_timer.Click += button_start_timer_Click;
             // 
             // Form1
             // 
@@ -638,7 +658,6 @@
             panel6.PerformLayout();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel7.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -657,20 +676,17 @@
         private ListBox listBox_red_names;
         private Panel panel2;
         private Panel panel3;
-        private Button button5;
-        private Button button4;
-        private Button button3;
+        private Button button_three_bal_red;
+        private Button button_two_bal_red;
+        private Button button_one_bal_red;
         private Panel panel4;
-        private CheckBox checkBox1;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
         private Button button12;
         private Button button11;
-        private Button button7;
-        private Button button8;
-        private Button button9;
-        private Button button10;
-        private Button button6;
+        private Button button_four_bal_red_min;
+        private Button button_othree_bal_red_min;
+        private Button button_two_bal_red_min;
+        private Button button_one_bal_red_min;
+        private Button button_four_bal_red;
         private Panel panel5;
         private Panel panel6;
         private CheckBox checkBox4;
@@ -678,26 +694,29 @@
         private CheckBox checkBox6;
         private Button button13;
         private Button button14;
-        private Button button15;
-        private Button button16;
-        private Button button17;
-        private Button button18;
-        private Button button19;
-        private Button button20;
-        private Button button21;
-        private Button button22;
+        private Button button_four_bal_blue_min;
+        private Button button_three_bal_blue_min;
+        private Button button_two_bal_blue_min;
+        private Button button_one_bal_blue_min;
+        private Button button_four_bal_blue;
+        private Button button_three_bal_blue;
+        private Button button_two_bal_blue;
+        private Button button_one_bal_blue;
         private Panel panel7;
         private Panel panel8;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button button24;
-        private Button button23;
+        private Button button_timer_pause;
+        private Button button_start_timer;
         private Panel panel9;
         private Label label5;
         private Label label4;
         private Button button25;
         private TextBox textBox2;
         private TextBox textBox1;
+        private Button button_red_d1;
+        private Button button_red_d3;
+        private Button button_red_d2;
     }
 }
