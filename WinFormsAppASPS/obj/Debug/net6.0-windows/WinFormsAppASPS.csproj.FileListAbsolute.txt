@@ -16,3 +16,4 @@ C:\Users\Andrey\source\repos\davy829\New_asps_2023\WinFormsAppASPS\obj\Debug\net
 C:\Users\Andrey\source\repos\davy829\New_asps_2023\WinFormsAppASPS\obj\Debug\net6.0-windows\WinFormsAppASPS.pdb
 C:\Users\Andrey\source\repos\davy829\New_asps_2023\WinFormsAppASPS\obj\Debug\net6.0-windows\WinFormsAppASPS.genruntimeconfig.cache
 C:\Users\Andrey\source\repos\davy829\New_asps_2023\WinFormsAppASPS\obj\Debug\net6.0-windows\ref\WinFormsAppASPS.dll
+C:\Users\Andrey\source\repos\davy829\New_asps_2023\WinFormsAppASPS\obj\Debug\net6.0-windows\WinFormsAppASPS.Properties.Resources.resources

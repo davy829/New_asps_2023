@@ -12,8 +12,7 @@ namespace WinFormsAppASPS
 {
     public partial class Form2 : Form
     {
-        int min_1 = 4;
-        int sec_1 = 60;
+        int wievPanelPinner = 3;
         String fullPath = Application.StartupPath.ToString();
         public Form2()
         {
@@ -44,23 +43,32 @@ namespace WinFormsAppASPS
             label_red_name.Top = panel1.Height / 2 - label_red_name.Height / 2;
             label_blue_name.Top = panel2.Height / 2 - label_blue_name.Height / 2;
             label_weight.Left = this.Width - label_weight.Width - 50;
-
+            panel_winner.Left = 0;
+            panel_winner.Top = 0;
+            panel_winner.Width = this.Width;
+            panel_winner.Height = this.Height;
+            label_winner.Left = 100;
+            label2.Left = this.Width / 2 - label2.Width / 2;
+            label2.Top = this.Height - label2.Height - 50;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
 
-            sec_1 = sec_1 - 1;
-            label_timer_sec.Text = sec_1.ToString();
-            if (sec_1 == 1)
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            wievPanelPinner = wievPanelPinner - 1;
+            if (wievPanelPinner == 0)
             {
-                sec_1 = 60;
-                int min_1 = int.Parse(label_timer_min.Text) - 1;
-                if (min_1 == 0)
-                { timer1.Enabled = false; }
-                label_timer_min.Text = min_1.ToString();
+                panel_winner.Visible = false;
+                wievPanelPinner = 3;
+
             }
+
+
         }
     }
 }

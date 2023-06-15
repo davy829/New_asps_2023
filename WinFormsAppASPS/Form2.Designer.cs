@@ -30,30 +30,40 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            panel3 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
             label_weight = new Label();
             label_red_name = new Label();
             label_red_score = new Label();
+            panel_winner = new Panel();
+            label2 = new Label();
+            label_winner = new Label();
             panel2 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            panel10 = new Panel();
             label_blue_name = new Label();
             label_blue_score = new Label();
             panel_timer = new Panel();
             label_timer_sec = new Label();
             label_timer_separator = new Label();
             label_timer_min = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
+            timer2 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel_timer.SuspendLayout();
             panel3.SuspendLayout();
+            panel_winner.SuspendLayout();
+            panel2.SuspendLayout();
+            panel7.SuspendLayout();
+            panel_timer.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(panel_winner);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label_weight);
             panel1.Controls.Add(label_red_name);
@@ -62,6 +72,47 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 226);
             panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel5);
+            panel3.Controls.Add(panel4);
+            panel3.Location = new Point(306, 13);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(87, 99);
+            panel3.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Yellow;
+            panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Location = new Point(37, 25);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(46, 62);
+            panel6.TabIndex = 2;
+            panel6.Visible = false;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Yellow;
+            panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Location = new Point(18, 14);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(46, 62);
+            panel5.TabIndex = 1;
+            panel5.Visible = false;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Yellow;
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Location = new Point(3, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(46, 62);
+            panel4.TabIndex = 0;
+            panel4.Visible = false;
             // 
             // label_weight
             // 
@@ -101,15 +152,94 @@
             label_red_score.Text = "0";
             label_red_score.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // panel_winner
+            // 
+            panel_winner.BackColor = SystemColors.ActiveCaptionText;
+            panel_winner.BackgroundImage = Properties.Resources.win;
+            panel_winner.BackgroundImageLayout = ImageLayout.Center;
+            panel_winner.Controls.Add(label2);
+            panel_winner.Controls.Add(label_winner);
+            panel_winner.Location = new Point(648, 115);
+            panel_winner.Name = "panel_winner";
+            panel_winner.Size = new Size(612, 406);
+            panel_winner.TabIndex = 3;
+            panel_winner.Visible = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(226, 320);
+            label2.Name = "label2";
+            label2.Size = new Size(433, 128);
+            label2.TabIndex = 1;
+            label2.Text = "WINNER";
+            // 
+            // label_winner
+            // 
+            label_winner.AutoSize = true;
+            label_winner.BackColor = Color.Transparent;
+            label_winner.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
+            label_winner.ForeColor = SystemColors.ButtonHighlight;
+            label_winner.Location = new Point(107, 0);
+            label_winner.Name = "label_winner";
+            label_winner.Size = new Size(302, 128);
+            label_winner.TabIndex = 0;
+            label_winner.Text = "label1";
+            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.Controls.Add(panel7);
             panel2.Controls.Add(label_blue_name);
             panel2.Controls.Add(label_blue_score);
             panel2.Location = new Point(12, 282);
             panel2.Name = "panel2";
             panel2.Size = new Size(776, 207);
             panel2.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.Controls.Add(panel8);
+            panel7.Controls.Add(panel9);
+            panel7.Controls.Add(panel10);
+            panel7.Location = new Point(309, 14);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(87, 99);
+            panel7.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Yellow;
+            panel8.BorderStyle = BorderStyle.Fixed3D;
+            panel8.Location = new Point(37, 25);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(46, 62);
+            panel8.TabIndex = 2;
+            panel8.Visible = false;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Yellow;
+            panel9.BorderStyle = BorderStyle.Fixed3D;
+            panel9.Location = new Point(18, 14);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(46, 62);
+            panel9.TabIndex = 1;
+            panel9.Visible = false;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.Yellow;
+            panel10.BorderStyle = BorderStyle.Fixed3D;
+            panel10.Location = new Point(3, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(46, 62);
+            panel10.TabIndex = 0;
+            panel10.Visible = false;
             // 
             // label_blue_name
             // 
@@ -142,7 +272,7 @@
             panel_timer.Controls.Add(label_timer_separator);
             panel_timer.Controls.Add(label_timer_min);
             panel_timer.ForeColor = SystemColors.ButtonHighlight;
-            panel_timer.Location = new Point(319, 253);
+            panel_timer.Location = new Point(485, 253);
             panel_timer.Name = "panel_timer";
             panel_timer.Size = new Size(409, 151);
             panel_timer.TabIndex = 2;
@@ -180,51 +310,10 @@
             label_timer_min.TabIndex = 0;
             label_timer_min.Text = "4";
             // 
-            // timer1
+            // timer2
             // 
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(panel6);
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel4);
-            panel3.Location = new Point(306, 13);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(87, 99);
-            panel3.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.Yellow;
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Location = new Point(3, 3);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(46, 62);
-            panel4.TabIndex = 0;
-            panel4.Visible = false;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Yellow;
-            panel5.BorderStyle = BorderStyle.Fixed3D;
-            panel5.Location = new Point(18, 14);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(46, 62);
-            panel5.TabIndex = 1;
-            panel5.Visible = false;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Yellow;
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Location = new Point(37, 25);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(46, 62);
-            panel6.TabIndex = 2;
-            panel6.Visible = false;
+            timer2.Interval = 1000;
+            timer2.Tick += timer2_Tick;
             // 
             // Form2
             // 
@@ -240,11 +329,14 @@
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel_winner.ResumeLayout(false);
+            panel_winner.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel7.ResumeLayout(false);
             panel_timer.ResumeLayout(false);
             panel_timer.PerformLayout();
-            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -254,7 +346,6 @@
         private Panel panel2;
         private Panel panel_timer;
         private Label label_timer_separator;
-        public System.Windows.Forms.Timer timer1;
         public Label label_red_name;
         public Label label_red_score;
         public Label label_blue_score;
@@ -266,5 +357,13 @@
         public Panel panel4;
         public Panel panel6;
         public Panel panel5;
+        private Panel panel7;
+        public Panel panel8;
+        public Panel panel9;
+        public Panel panel10;
+        public Panel panel_winner;
+        private Label label2;
+        public Label label_winner;
+        public System.Windows.Forms.Timer timer2;
     }
 }

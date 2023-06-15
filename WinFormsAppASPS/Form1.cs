@@ -6,6 +6,9 @@ namespace WinFormsAppASPS
         String fullPath = Application.StartupPath.ToString();
         bool dis_red = false;
         bool dis_blue = false;
+        bool vpause = false;
+        int min_1 = 4;
+        int sec_1 = 60;
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +35,13 @@ namespace WinFormsAppASPS
 
             }
         }
+        public void show_panel_win(string winner = "Deniska")
+        {
 
+            fr2.label_winner.Text = winner;
+            fr2.panel_winner.Visible = true;
+            fr2.timer2.Enabled = true;
+        }
         public void add_bals(int red_add, int blue_add)
         {
             int bals_red = int.Parse(fr2.label_red_score.Text) + red_add;
@@ -47,6 +56,12 @@ namespace WinFormsAppASPS
             fr2.label_red_name.Text = listBox_red_names.Text;
             fr2.label_blue_name.Text = listBox_blue_names.Text;
             showForm2();
+            int r = listBox_red_names.SelectedIndex;
+            int b = listBox_blue_names.SelectedIndex;
+            //listBox_red_names.Items[r] = "redy_" + b.ToString() + " " + listBox_red_names.Items[r];
+            //listBox_blue_names.Items[b] = "redy_" + r.ToString() + " " + listBox_blue_names.Items[b];
+            listBox_red_names.Items.RemoveAt(r);
+            listBox_blue_names.Items.RemoveAt(b);
         }
 
         private void button_add_files_Click(object sender, EventArgs e)
@@ -78,20 +93,30 @@ namespace WinFormsAppASPS
                 sr_blue.Close();
                 string weit = listBox_files_weit.Text;
                 fr2.label_weight.Text = "Âåñ " + weit.Substring((weit.Length - 6), 2) + "êã";
-                MessageBox.Show(weit.Substring(4, weit.Length - 4), "Âåðî", MessageBoxButtons.OK);
+                // MessageBox.Show(weit.Substring(4, weit.Length - 4), "Âåðî", MessageBoxButtons.OK);
 
             }
         }
 
         private void button_start_timer_Click(object sender, EventArgs e)
         {
-            fr2.timer1.Enabled = true;
+
+            if (vpause == false)
+            {
+                this.timer1.Enabled = true;
+                button_start_timer.Text = "ÏÀÓÇÀ";
+                vpause = true;
+            }
+            else
+            {
+
+                this.timer1.Enabled = false;
+                button_start_timer.Text = "ÑÒÀÐÒ";
+                vpause = false;
+            }
         }
 
-        private void button_timer_pause_Click(object sender, EventArgs e)
-        {
-            fr2.timer1.Enabled = false;
-        }
+
 
         private void button_one_bal_red_Click(object sender, EventArgs e)
         {
@@ -216,6 +241,104 @@ namespace WinFormsAppASPS
             {
                 fr2.panel6.Visible = true;
                 dis_red = true;
+            }
+            show_panel_win(fr2.label_blue_name.Text);
+        }
+
+        private void button_blue_d1_Click(object sender, EventArgs e)
+        {
+            if (dis_blue)
+            {
+                fr2.panel10.Visible = false;
+                dis_blue = false;
+            }
+            else
+            {
+                fr2.panel10.Visible = true;
+                dis_blue = true;
+                button_blue_d2.Enabled = true;
+            }
+        }
+
+        private void button_blue_d2_Click(object sender, EventArgs e)
+        {
+            if (dis_blue)
+            {
+                fr2.panel9.Visible = false;
+                dis_blue = false;
+            }
+            else
+            {
+                fr2.panel9.Visible = true;
+                dis_blue = true;
+                button_blue_d3.Enabled = true;
+            }
+        }
+
+        private void button_blue_d3_Click(object sender, EventArgs e)
+        {
+            if (dis_blue)
+            {
+                fr2.panel8.Visible = false;
+                dis_blue = false;
+            }
+            else
+            {
+                fr2.panel8.Visible = true;
+                dis_blue = true;
+
+            }
+            show_panel_win(fr2.label_red_name.Text);
+        }
+
+        private void button_winner_Click(object sender, EventArgs e)
+        {
+            show_panel_win(fr2.label_red_name.Text);
+        }
+
+        private void button_winner_blue_Click(object sender, EventArgs e)
+        {
+            show_panel_win(fr2.label_blue_name.Text);
+        }
+
+        private void buttonTimerReset_Click(object sender, EventArgs e)
+        {
+            fr2.label_timer_min.Text = textBox1.Text;
+            fr2.label_timer_sec.Text = textBox2.Text;
+            min_1 = int.Parse(textBox1.Text);
+            sec_1 = int.Parse(textBox2.Text);
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int win_1 = int.Parse(fr2.label_red_score.Text);
+            int win_2 = int.Parse(fr2.label_blue_score.Text);
+            if (min_1 == 0 & sec_1 == 1)
+            {
+                timer1.Enabled = false;
+                if (win_1 > win_2)
+                {
+                    fr2.Add_to_file("winner red", "luser blue ");
+                }
+                else
+                {
+                    fr2.Add_to_file("luser red ", "winner blue");
+                }
+            }
+
+            sec_1 = sec_1 - 1;
+            fr2.label_timer_sec.Text = sec_1.ToString();
+            label3.Text = sec_1.ToString();
+            label1.Text = min_1.ToString();
+            if (sec_1 == 1)
+            {
+                sec_1 = 60;
+                int min_1 = int.Parse(fr2.label_timer_min.Text) - 1;
+                if (min_1 == 0)
+                { timer1.Enabled = false; }
+                fr2.label_timer_min.Text = min_1.ToString();
+
             }
         }
     }
