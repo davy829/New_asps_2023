@@ -18,16 +18,7 @@ namespace WinFormsAppASPS
         {
             InitializeComponent();
         }
-        public void Add_to_file(string a_1 = "", string a_2 = "")
-        {
-            string path = fullPath + "/output.txt";
-            string timeSport = "* t_:" + label_timer_min.Text + ":" + label_timer_sec.Text;
-            string redSport = label_red_name.Text + " r score_:" + label_red_score.Text + " *" + a_1 + timeSport + "\n";
-            string blueSport = label_blue_name.Text + " b score_:" + label_blue_score.Text + " *" + a_2 + timeSport + "\n";
-
-            string createText = redSport + blueSport;
-            File.AppendAllText(path, createText);
-        }
+  
         private void Form2_Load(object sender, EventArgs e)
         {
             panel1.Width = this.Width;

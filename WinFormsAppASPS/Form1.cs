@@ -9,31 +9,63 @@ namespace WinFormsAppASPS
         bool vpause = false;
         int min_1 = 4;
         int sec_1 = 60;
+        string weightFromFile = string.Empty;
         public Form1()
         {
             InitializeComponent();
         }
+        public void AddToFileProtokol(string a_1 = "", string a_2 = "")
+        {
+            string path = fullPath + "/protokol_" + weightFromFile + ".txt";
+            string timeSport = "* t_:" + fr2.label_timer_min.Text + ":" + fr2.label_timer_sec.Text;
+            string redSport = fr2.label_red_name.Text + " r score_:" + fr2.label_red_score.Text + " *" + a_1 + timeSport + "\n";
+            string blueSport = fr2.label_blue_name.Text + " b score_:" + fr2.label_blue_score.Text + " *" + a_2 + timeSport + "\n";
+            string createText = redSport + blueSport;
+            File.AppendAllText(path, createText);
+        }
+        public void AddToFileWinner(string w_1 = "", string w_2 = "")
+        {
+            string path = fullPath + "/winner_" + weightFromFile + ".txt";
+            string timeSport = "* t_:" + fr2.label_timer_min.Text + ":" + fr2.label_timer_sec.Text;
+            string winSport =  w_1 + w_2 + " time_: " + timeSport + "\n";
+            File.AppendAllText(path, winSport);
+        }
+
+        //public void endOffContest(string winnerWho)
+        //{
+        //    timer1.Enabled = false;
+        //    string path = fullPath + "/winners.txt";
+        //    File.AppendAllText(path, winnerWho + "\n");
+        //}
+
+        public void ResetTimer()
+        {
+            fr2.label_timer_min.Text = textBox1.Text;
+            fr2.label_timer_sec.Text = textBox2.Text;
+            min_1 = int.Parse(textBox1.Text);
+            sec_1 = int.Parse(textBox2.Text);
+        }
         private void showForm2()
         {
-            Screen[] sc;
-            sc = Screen.AllScreens;
-            if (sc.Length > 1)
-            {
-                fr2.FormBorderStyle = FormBorderStyle.Sizable;
-                fr2.Left = sc[1].Bounds.Width;
-                fr2.Top = sc[1].Bounds.Height;
-                fr2.StartPosition = FormStartPosition.Manual;
-                fr2.Location = sc[1].Bounds.Location;
-                Point p = new Point(sc[1].Bounds.Location.X, sc[1].Bounds.Location.Y);
-                fr2.Location = p;
-                fr2.WindowState = FormWindowState.Maximized;
-                fr2.Show();
-            }
-            else
-            {
-                MessageBox.Show("Не подсоеденен второй монитор !!!", "Пиздец", MessageBoxButtons.OK);
+            //Screen[] sc;
+            //sc = Screen.AllScreens;
+            //if (sc.Length > 1)
+            //{
+            //    fr2.FormBorderStyle = FormBorderStyle.Sizable;
+            //    fr2.Left = sc[1].Bounds.Width;
+            //    fr2.Top = sc[1].Bounds.Height;
+            //    fr2.StartPosition = FormStartPosition.Manual;
+            //    fr2.Location = sc[1].Bounds.Location;
+            //    Point p = new Point(sc[1].Bounds.Location.X, sc[1].Bounds.Location.Y);
+            //    fr2.Location = p;
+            //    fr2.WindowState = FormWindowState.Maximized;
+            fr2.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Не подсоеденен второй монитор !!!", "Пиздец", MessageBoxButtons.OK);
 
-            }
+            //}
         }
         public void show_panel_win(string winner = "Deniska")
         {
@@ -91,8 +123,9 @@ namespace WinFormsAppASPS
                     listBox_blue_names.Items.Add(sr_blue.ReadLine());
                 }
                 sr_blue.Close();
-                string weit = listBox_files_weit.Text;
-                fr2.label_weight.Text = "Вес " + weit.Substring((weit.Length - 6), 2) + "кг";
+
+                weightFromFile = listBox_files_weit.Text.Substring((listBox_files_weit.Text.Length - 6), 2);
+                fr2.label_weight.Text = "Вес " + weightFromFile + "кг";
                 // MessageBox.Show(weit.Substring(4, weit.Length - 4), "Веро", MessageBoxButtons.OK);
 
             }
@@ -219,14 +252,15 @@ namespace WinFormsAppASPS
         {
             if (dis_red)
             {
-                fr2.panel5.Visible = false;
-                dis_red = false;
-            }
-            else
-            {
                 fr2.panel5.Visible = true;
                 dis_red = true;
                 button_red_d3.Enabled = true;
+            }
+            else
+            {
+                fr2.panel5.Visible = false;
+                dis_red = false;
+
             }
         }
 
@@ -243,6 +277,8 @@ namespace WinFormsAppASPS
                 dis_red = true;
             }
             show_panel_win(fr2.label_blue_name.Text);
+            AddToFileWinner("red disqual", fr2.label_blue_name.Text + "blue winner");
+            //endOffContest(fr2.label_blue_name.Text + " score=" + fr2.label_blue_score.Text);
         }
 
         private void button_blue_d1_Click(object sender, EventArgs e)
@@ -264,14 +300,15 @@ namespace WinFormsAppASPS
         {
             if (dis_blue)
             {
-                fr2.panel9.Visible = false;
-                dis_blue = false;
-            }
-            else
-            {
                 fr2.panel9.Visible = true;
                 dis_blue = true;
                 button_blue_d3.Enabled = true;
+
+            }
+            else
+            {
+                fr2.panel9.Visible = false;
+                dis_blue = false;
             }
         }
 
@@ -289,25 +326,26 @@ namespace WinFormsAppASPS
 
             }
             show_panel_win(fr2.label_red_name.Text);
+            AddToFileWinner(fr2.label_red_name.Text + "red winner", "blue disqual");
+           // endOffContest(fr2.label_red_name.Text + " score=" + fr2.label_red_score.Text);
         }
 
         private void button_winner_Click(object sender, EventArgs e)
         {
             show_panel_win(fr2.label_red_name.Text);
+
+            AddToFileWinner(fr2.label_red_name.Text + "red winner", " ");
         }
 
         private void button_winner_blue_Click(object sender, EventArgs e)
         {
             show_panel_win(fr2.label_blue_name.Text);
+            AddToFileWinner(" ", fr2.label_blue_name.Text + "blue winner");
         }
 
         private void buttonTimerReset_Click(object sender, EventArgs e)
         {
-            fr2.label_timer_min.Text = textBox1.Text;
-            fr2.label_timer_sec.Text = textBox2.Text;
-            min_1 = int.Parse(textBox1.Text);
-            sec_1 = int.Parse(textBox2.Text);
-
+            ResetTimer();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -319,11 +357,11 @@ namespace WinFormsAppASPS
                 timer1.Enabled = false;
                 if (win_1 > win_2)
                 {
-                    fr2.Add_to_file("winner red", "luser blue ");
+                    AddToFileProtokol("winner red", "luser blue ");
                 }
                 else
                 {
-                    fr2.Add_to_file("luser red ", "winner blue");
+                    AddToFileProtokol("luser red ", "winner blue");
                 }
             }
 
@@ -331,7 +369,7 @@ namespace WinFormsAppASPS
             fr2.label_timer_sec.Text = sec_1.ToString();
             label3.Text = sec_1.ToString();
             label1.Text = min_1.ToString();
-            if (sec_1 == 1)
+            if (sec_1 == 0)
             {
                 sec_1 = 60;
                 int min_1 = int.Parse(fr2.label_timer_min.Text) - 1;
@@ -340,6 +378,37 @@ namespace WinFormsAppASPS
                 fr2.label_timer_min.Text = min_1.ToString();
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show(
+        "Вы хотите закончить поединок ?",
+        "Сообщение",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Information,
+        MessageBoxDefaultButton.Button1,
+        MessageBoxOptions.DefaultDesktopOnly);
+
+            if (result == DialogResult.Yes)
+            {
+                fr2.label_blue_score.Text = "0";
+                fr2.label_red_score.Text = "0";
+                fr2.panel4.Visible = false;
+                fr2.panel5.Visible = false;
+                fr2.panel6.Visible = false;
+                fr2.panel8.Visible = false;
+                fr2.panel9.Visible = false;
+                fr2.panel10.Visible = false;
+                fr2.label_blue_name.Text = "blue";
+                fr2.label_red_name.Text = "red";
+             //   endOffContest("Null");
+                ResetTimer();
+                button_start_timer.Text = "СТАРТ";
+                vpause = false;
+            }
+
         }
     }
 }

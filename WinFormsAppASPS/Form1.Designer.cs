@@ -68,6 +68,7 @@
             button_two_bal_red = new Button();
             button_one_bal_red = new Button();
             panel7 = new Panel();
+            button1 = new Button();
             panel9 = new Panel();
             label5 = new Label();
             label4 = new Label();
@@ -80,7 +81,6 @@
             label1 = new Label();
             button_start_timer = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -521,6 +521,18 @@
             panel7.Size = new Size(124, 232);
             panel7.TabIndex = 2;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Firebrick;
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(3, 98);
+            button1.Name = "button1";
+            button1.Size = new Size(116, 45);
+            button1.TabIndex = 4;
+            button1.Text = "ЗАКОНЧИТЬ ПОЕДИНОК";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // panel9
             // 
             panel9.BorderStyle = BorderStyle.FixedSingle;
@@ -529,16 +541,16 @@
             panel9.Controls.Add(buttonTimerReset);
             panel9.Controls.Add(textBox2);
             panel9.Controls.Add(textBox1);
-            panel9.Location = new Point(5, 135);
+            panel9.Location = new Point(4, 146);
             panel9.Name = "panel9";
-            panel9.Size = new Size(114, 92);
+            panel9.Size = new Size(114, 80);
             panel9.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(90, 66);
+            label5.Location = new Point(88, 64);
             label5.Name = "label5";
             label5.Size = new Size(18, 12);
             label5.TabIndex = 4;
@@ -548,7 +560,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(34, 67);
+            label4.Location = new Point(35, 65);
             label4.Name = "label4";
             label4.Size = new Size(21, 12);
             label4.TabIndex = 3;
@@ -556,9 +568,9 @@
             // 
             // buttonTimerReset
             // 
-            buttonTimerReset.Location = new Point(3, 7);
+            buttonTimerReset.Location = new Point(3, 2);
             buttonTimerReset.Name = "buttonTimerReset";
-            buttonTimerReset.Size = new Size(102, 49);
+            buttonTimerReset.Size = new Size(105, 49);
             buttonTimerReset.TabIndex = 2;
             buttonTimerReset.Text = "Сбросить таймер";
             buttonTimerReset.UseVisualStyleBackColor = true;
@@ -566,7 +578,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(57, 58);
+            textBox2.Location = new Point(57, 53);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(31, 23);
             textBox2.TabIndex = 1;
@@ -575,7 +587,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(3, 58);
+            textBox1.Location = new Point(4, 53);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(31, 23);
             textBox1.TabIndex = 0;
@@ -630,7 +642,7 @@
             button_start_timer.ForeColor = Color.Red;
             button_start_timer.Location = new Point(3, 4);
             button_start_timer.Name = "button_start_timer";
-            button_start_timer.Size = new Size(116, 75);
+            button_start_timer.Size = new Size(116, 90);
             button_start_timer.TabIndex = 0;
             button_start_timer.Text = "СТАРТ";
             button_start_timer.UseVisualStyleBackColor = false;
@@ -638,19 +650,8 @@
             // 
             // timer1
             // 
-            timer1.Interval = 1000;
+            timer1.Interval = 50;
             timer1.Tick += timer1_Tick;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Firebrick;
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(3, 84);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 45);
-            button1.TabIndex = 4;
-            button1.Text = "ЗАКОНЧИТЬ ПОЕДИНОК";
-            button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
