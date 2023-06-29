@@ -42,7 +42,7 @@
             button_blue_d3 = new Button();
             button_blue_d2 = new Button();
             button_blue_d1 = new Button();
-            button13 = new Button();
+            buttonAdvantecBlue = new Button();
             button_winner_blue = new Button();
             button_four_bal_blue_min = new Button();
             button_three_bal_blue_min = new Button();
@@ -68,7 +68,7 @@
             button_two_bal_red = new Button();
             button_one_bal_red = new Button();
             panel7 = new Panel();
-            button1 = new Button();
+            buttonEndOfContest = new Button();
             panel9 = new Panel();
             label5 = new Label();
             label4 = new Label();
@@ -100,16 +100,17 @@
             panel1.Controls.Add(listBox_files_weit);
             panel1.Controls.Add(listBox_blue_names);
             panel1.Controls.Add(listBox_red_names);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(546, 277);
+            panel1.Size = new Size(568, 277);
             panel1.TabIndex = 0;
             // 
             // button_add_files
             // 
-            button_add_files.Location = new Point(472, 223);
+            button_add_files.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button_add_files.Location = new Point(478, 223);
             button_add_files.Name = "button_add_files";
-            button_add_files.Size = new Size(70, 42);
+            button_add_files.Size = new Size(86, 49);
             button_add_files.TabIndex = 4;
             button_add_files.Text = "Добавить файлы весов";
             button_add_files.UseVisualStyleBackColor = true;
@@ -117,9 +118,16 @@
             // 
             // button_add_sportsmen
             // 
+            button_add_sportsmen.BackgroundImage = Properties.Resources._5542;
+            button_add_sportsmen.BackgroundImageLayout = ImageLayout.Zoom;
+            button_add_sportsmen.Cursor = Cursors.Hand;
+            button_add_sportsmen.Enabled = false;
+            button_add_sportsmen.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button_add_sportsmen.ImageAlign = ContentAlignment.TopRight;
             button_add_sportsmen.Location = new Point(3, 223);
             button_add_sportsmen.Name = "button_add_sportsmen";
-            button_add_sportsmen.Size = new Size(460, 42);
+            button_add_sportsmen.RightToLeft = RightToLeft.Yes;
+            button_add_sportsmen.Size = new Size(469, 49);
             button_add_sportsmen.TabIndex = 3;
             button_add_sportsmen.Text = "Добавить спорсменов и включить экран";
             button_add_sportsmen.UseVisualStyleBackColor = true;
@@ -129,9 +137,9 @@
             // 
             listBox_files_weit.FormattingEnabled = true;
             listBox_files_weit.ItemHeight = 15;
-            listBox_files_weit.Location = new Point(472, 3);
+            listBox_files_weit.Location = new Point(478, 3);
             listBox_files_weit.Name = "listBox_files_weit";
-            listBox_files_weit.Size = new Size(70, 214);
+            listBox_files_weit.Size = new Size(86, 214);
             listBox_files_weit.TabIndex = 2;
             listBox_files_weit.Click += listBox_files_weit_Click;
             // 
@@ -142,7 +150,7 @@
             listBox_blue_names.ItemHeight = 15;
             listBox_blue_names.Location = new Point(233, 3);
             listBox_blue_names.Name = "listBox_blue_names";
-            listBox_blue_names.Size = new Size(230, 214);
+            listBox_blue_names.Size = new Size(239, 214);
             listBox_blue_names.Sorted = true;
             listBox_blue_names.TabIndex = 1;
             // 
@@ -156,22 +164,24 @@
             listBox_red_names.Size = new Size(224, 214);
             listBox_red_names.Sorted = true;
             listBox_red_names.TabIndex = 0;
+            listBox_red_names.SelectedIndexChanged += listBox_red_names_SelectedIndexChanged;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(12, 295);
+            panel2.Location = new Point(4, 286);
             panel2.Name = "panel2";
-            panel2.Size = new Size(416, 238);
+            panel2.Size = new Size(416, 246);
             panel2.TabIndex = 1;
             // 
             // panel5
             // 
+            panel5.BackColor = Color.RosyBrown;
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel6);
-            panel5.Controls.Add(button13);
+            panel5.Controls.Add(buttonAdvantecBlue);
             panel5.Controls.Add(button_winner_blue);
             panel5.Controls.Add(button_four_bal_blue_min);
             panel5.Controls.Add(button_three_bal_blue_min);
@@ -181,9 +191,9 @@
             panel5.Controls.Add(button_three_bal_blue);
             panel5.Controls.Add(button_two_bal_blue);
             panel5.Controls.Add(button_one_bal_blue);
-            panel5.Location = new Point(220, 3);
+            panel5.Location = new Point(214, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(186, 228);
+            panel5.Size = new Size(195, 241);
             panel5.TabIndex = 1;
             // 
             // panel6
@@ -192,15 +202,15 @@
             panel6.Controls.Add(button_blue_d3);
             panel6.Controls.Add(button_blue_d2);
             panel6.Controls.Add(button_blue_d1);
-            panel6.Location = new Point(4, 89);
+            panel6.Location = new Point(4, 100);
             panel6.Name = "panel6";
-            panel6.Size = new Size(177, 31);
+            panel6.Size = new Size(186, 31);
             panel6.TabIndex = 9;
             // 
             // button_blue_d3
             // 
             button_blue_d3.Enabled = false;
-            button_blue_d3.Location = new Point(118, 2);
+            button_blue_d3.Location = new Point(124, 2);
             button_blue_d3.Name = "button_blue_d3";
             button_blue_d3.Size = new Size(54, 23);
             button_blue_d3.TabIndex = 2;
@@ -211,7 +221,7 @@
             // button_blue_d2
             // 
             button_blue_d2.Enabled = false;
-            button_blue_d2.Location = new Point(60, 2);
+            button_blue_d2.Location = new Point(64, 2);
             button_blue_d2.Name = "button_blue_d2";
             button_blue_d2.Size = new Size(54, 23);
             button_blue_d2.TabIndex = 1;
@@ -229,22 +239,25 @@
             button_blue_d1.UseVisualStyleBackColor = true;
             button_blue_d1.Click += button_blue_d1_Click;
             // 
-            // button13
+            // buttonAdvantecBlue
             // 
-            button13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button13.Location = new Point(3, 131);
-            button13.Name = "button13";
-            button13.Size = new Size(177, 42);
-            button13.TabIndex = 1;
-            button13.Text = "ADVANTEC";
-            button13.UseVisualStyleBackColor = true;
+            buttonAdvantecBlue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAdvantecBlue.Image = (Image)resources.GetObject("buttonAdvantecBlue.Image");
+            buttonAdvantecBlue.Location = new Point(2, 140);
+            buttonAdvantecBlue.Name = "buttonAdvantecBlue";
+            buttonAdvantecBlue.Size = new Size(187, 47);
+            buttonAdvantecBlue.TabIndex = 1;
+            buttonAdvantecBlue.Text = "ADVANTEC";
+            buttonAdvantecBlue.TextAlign = ContentAlignment.MiddleLeft;
+            buttonAdvantecBlue.UseVisualStyleBackColor = true;
+            buttonAdvantecBlue.Click += buttonAdvantecBlue_Click;
             // 
             // button_winner_blue
             // 
             button_winner_blue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button_winner_blue.Location = new Point(3, 177);
+            button_winner_blue.Location = new Point(1, 193);
             button_winner_blue.Name = "button_winner_blue";
-            button_winner_blue.Size = new Size(177, 42);
+            button_winner_blue.Size = new Size(187, 42);
             button_winner_blue.TabIndex = 1;
             button_winner_blue.Text = "WINNER";
             button_winner_blue.UseVisualStyleBackColor = true;
@@ -340,6 +353,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = SystemColors.ActiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(buttonAdvantecRed);
@@ -354,7 +368,7 @@
             panel3.Controls.Add(button_one_bal_red);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(186, 228);
+            panel3.Size = new Size(200, 241);
             panel3.TabIndex = 0;
             // 
             // panel4
@@ -363,15 +377,15 @@
             panel4.Controls.Add(button_red_d3);
             panel4.Controls.Add(button_red_d2);
             panel4.Controls.Add(button_red_d1);
-            panel4.Location = new Point(3, 89);
+            panel4.Location = new Point(3, 100);
             panel4.Name = "panel4";
-            panel4.Size = new Size(177, 31);
+            panel4.Size = new Size(192, 31);
             panel4.TabIndex = 1;
             // 
             // button_red_d3
             // 
             button_red_d3.Enabled = false;
-            button_red_d3.Location = new Point(118, 2);
+            button_red_d3.Location = new Point(131, 2);
             button_red_d3.Name = "button_red_d3";
             button_red_d3.Size = new Size(54, 23);
             button_red_d3.TabIndex = 2;
@@ -382,7 +396,7 @@
             // button_red_d2
             // 
             button_red_d2.Enabled = false;
-            button_red_d2.Location = new Point(60, 2);
+            button_red_d2.Location = new Point(67, 2);
             button_red_d2.Name = "button_red_d2";
             button_red_d2.Size = new Size(54, 23);
             button_red_d2.TabIndex = 1;
@@ -403,19 +417,22 @@
             // buttonAdvantecRed
             // 
             buttonAdvantecRed.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonAdvantecRed.Location = new Point(3, 131);
+            buttonAdvantecRed.Image = (Image)resources.GetObject("buttonAdvantecRed.Image");
+            buttonAdvantecRed.Location = new Point(2, 137);
             buttonAdvantecRed.Name = "buttonAdvantecRed";
-            buttonAdvantecRed.Size = new Size(177, 42);
+            buttonAdvantecRed.Size = new Size(192, 48);
             buttonAdvantecRed.TabIndex = 1;
             buttonAdvantecRed.Text = "ADVANTEC";
+            buttonAdvantecRed.TextAlign = ContentAlignment.MiddleLeft;
             buttonAdvantecRed.UseVisualStyleBackColor = true;
+            buttonAdvantecRed.Click += buttonAdvantecRed_Click;
             // 
             // button_winner
             // 
             button_winner.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button_winner.Location = new Point(3, 177);
+            button_winner.Location = new Point(3, 191);
             button_winner.Name = "button_winner";
-            button_winner.Size = new Size(177, 42);
+            button_winner.Size = new Size(192, 42);
             button_winner.TabIndex = 1;
             button_winner.Text = "WINNER";
             button_winner.UseVisualStyleBackColor = true;
@@ -512,26 +529,26 @@
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(button1);
+            panel7.Controls.Add(buttonEndOfContest);
             panel7.Controls.Add(panel9);
             panel7.Controls.Add(panel8);
             panel7.Controls.Add(button_start_timer);
-            panel7.Location = new Point(435, 296);
+            panel7.Location = new Point(427, 286);
             panel7.Name = "panel7";
-            panel7.Size = new Size(124, 232);
+            panel7.Size = new Size(143, 246);
             panel7.TabIndex = 2;
             // 
-            // button1
+            // buttonEndOfContest
             // 
-            button1.BackColor = Color.Firebrick;
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(3, 98);
-            button1.Name = "button1";
-            button1.Size = new Size(116, 45);
-            button1.TabIndex = 4;
-            button1.Text = "ЗАКОНЧИТЬ ПОЕДИНОК";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonEndOfContest.BackColor = Color.Firebrick;
+            buttonEndOfContest.ForeColor = SystemColors.ControlLightLight;
+            buttonEndOfContest.Location = new Point(4, 122);
+            buttonEndOfContest.Name = "buttonEndOfContest";
+            buttonEndOfContest.Size = new Size(130, 48);
+            buttonEndOfContest.TabIndex = 4;
+            buttonEndOfContest.Text = "ЗАКОНЧИТЬ ПОЕДИНОК";
+            buttonEndOfContest.UseVisualStyleBackColor = false;
+            buttonEndOfContest.Click += buttonEndOfContest_Click;
             // 
             // panel9
             // 
@@ -541,16 +558,16 @@
             panel9.Controls.Add(buttonTimerReset);
             panel9.Controls.Add(textBox2);
             panel9.Controls.Add(textBox1);
-            panel9.Location = new Point(4, 146);
+            panel9.Location = new Point(4, 176);
             panel9.Name = "panel9";
-            panel9.Size = new Size(114, 80);
+            panel9.Size = new Size(130, 65);
             panel9.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(88, 64);
+            label5.Location = new Point(89, 41);
             label5.Name = "label5";
             label5.Size = new Size(18, 12);
             label5.TabIndex = 4;
@@ -560,7 +577,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(35, 65);
+            label4.Location = new Point(36, 42);
             label4.Name = "label4";
             label4.Size = new Size(21, 12);
             label4.TabIndex = 3;
@@ -568,9 +585,9 @@
             // 
             // buttonTimerReset
             // 
-            buttonTimerReset.Location = new Point(3, 2);
+            buttonTimerReset.Location = new Point(3, 3);
             buttonTimerReset.Name = "buttonTimerReset";
-            buttonTimerReset.Size = new Size(105, 49);
+            buttonTimerReset.Size = new Size(123, 32);
             buttonTimerReset.TabIndex = 2;
             buttonTimerReset.Text = "Сбросить таймер";
             buttonTimerReset.UseVisualStyleBackColor = true;
@@ -578,7 +595,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(57, 53);
+            textBox2.Location = new Point(58, 38);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(31, 23);
             textBox2.TabIndex = 1;
@@ -587,7 +604,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(4, 53);
+            textBox1.Location = new Point(5, 38);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(31, 23);
             textBox1.TabIndex = 0;
@@ -600,7 +617,7 @@
             panel8.Controls.Add(label3);
             panel8.Controls.Add(label2);
             panel8.Controls.Add(label1);
-            panel8.Location = new Point(65, 8);
+            panel8.Location = new Point(74, 15);
             panel8.Name = "panel8";
             panel8.Size = new Size(49, 23);
             panel8.TabIndex = 2;
@@ -640,9 +657,10 @@
             button_start_timer.BackColor = SystemColors.ButtonHighlight;
             button_start_timer.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             button_start_timer.ForeColor = Color.Red;
-            button_start_timer.Location = new Point(3, 4);
+            button_start_timer.Image = Properties.Resources._443;
+            button_start_timer.Location = new Point(8, 3);
             button_start_timer.Name = "button_start_timer";
-            button_start_timer.Size = new Size(116, 90);
+            button_start_timer.Size = new Size(127, 99);
             button_start_timer.TabIndex = 0;
             button_start_timer.Text = "СТАРТ";
             button_start_timer.UseVisualStyleBackColor = false;
@@ -650,14 +668,14 @@
             // 
             // timer1
             // 
-            timer1.Interval = 50;
+            timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(570, 536);
+            ClientSize = new Size(575, 536);
             Controls.Add(panel7);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -702,7 +720,7 @@
         private Button button_one_bal_red_min;
         private Button button_four_bal_red;
         private Panel panel5;
-        private Button button13;
+        private Button buttonAdvantecBlue;
         private Button button_winner_blue;
         private Button button_four_bal_blue_min;
         private Button button_three_bal_blue_min;
@@ -732,6 +750,6 @@
         public TextBox textBox2;
         public TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
-        private Button button1;
+        private Button buttonEndOfContest;
     }
 }

@@ -12,13 +12,13 @@ namespace WinFormsAppASPS
 {
     public partial class Form2 : Form
     {
-        int wievPanelPinner = 3;
+        int wievPanelWinner = 3;
         String fullPath = Application.StartupPath.ToString();
         public Form2()
         {
             InitializeComponent();
         }
-  
+
         private void Form2_Load(object sender, EventArgs e)
         {
             panel1.Width = this.Width;
@@ -51,11 +51,11 @@ namespace WinFormsAppASPS
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            wievPanelPinner = wievPanelPinner - 1;
-            if (wievPanelPinner == 0)
+            wievPanelWinner = wievPanelWinner - 1;
+            if (wievPanelWinner == 0)
             {
                 panel_winner.Visible = false;
-                wievPanelPinner = 3;
+                wievPanelWinner = 3;
 
             }
 

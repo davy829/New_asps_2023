@@ -30,6 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            panelAdvantecRed = new Panel();
+            labelAdvanRed = new Label();
+            panel_winner = new Panel();
+            label2 = new Label();
+            label_winner = new Label();
             panel3 = new Panel();
             panel6 = new Panel();
             panel5 = new Panel();
@@ -37,10 +42,8 @@
             label_weight = new Label();
             label_red_name = new Label();
             label_red_score = new Label();
-            panel_winner = new Panel();
-            label2 = new Label();
-            label_winner = new Label();
             panel2 = new Panel();
+            panelAdvantecBlue = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
             panel9 = new Panel();
@@ -52,10 +55,13 @@
             label_timer_separator = new Label();
             label_timer_min = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
+            labelAdvanBlue = new Label();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
+            panelAdvantecRed.SuspendLayout();
             panel_winner.SuspendLayout();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
+            panelAdvantecBlue.SuspendLayout();
             panel7.SuspendLayout();
             panel_timer.SuspendLayout();
             SuspendLayout();
@@ -63,6 +69,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
+            panel1.Controls.Add(panelAdvantecRed);
             panel1.Controls.Add(panel_winner);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label_weight);
@@ -72,6 +79,65 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 226);
             panel1.TabIndex = 0;
+            // 
+            // panelAdvantecRed
+            // 
+            panelAdvantecRed.BackColor = Color.Red;
+            panelAdvantecRed.BackgroundImage = Properties.Resources.ottopyr_mizinec54;
+            panelAdvantecRed.BackgroundImageLayout = ImageLayout.Stretch;
+            panelAdvantecRed.Controls.Add(labelAdvanRed);
+            panelAdvantecRed.Location = new Point(229, 139);
+            panelAdvantecRed.Name = "panelAdvantecRed";
+            panelAdvantecRed.Size = new Size(50, 48);
+            panelAdvantecRed.TabIndex = 4;
+            panelAdvantecRed.Visible = false;
+            // 
+            // labelAdvanRed
+            // 
+            labelAdvanRed.AutoSize = true;
+            labelAdvanRed.ForeColor = SystemColors.ControlLightLight;
+            labelAdvanRed.Location = new Point(35, 3);
+            labelAdvanRed.Name = "labelAdvanRed";
+            labelAdvanRed.Size = new Size(13, 15);
+            labelAdvanRed.TabIndex = 0;
+            labelAdvanRed.Text = "0";
+            // 
+            // panel_winner
+            // 
+            panel_winner.BackColor = SystemColors.ActiveCaptionText;
+            panel_winner.BackgroundImage = Properties.Resources.win;
+            panel_winner.BackgroundImageLayout = ImageLayout.Center;
+            panel_winner.Controls.Add(label2);
+            panel_winner.Controls.Add(label_winner);
+            panel_winner.Location = new Point(648, 115);
+            panel_winner.Name = "panel_winner";
+            panel_winner.Size = new Size(612, 406);
+            panel_winner.TabIndex = 3;
+            panel_winner.Visible = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(226, 320);
+            label2.Name = "label2";
+            label2.Size = new Size(433, 128);
+            label2.TabIndex = 1;
+            label2.Text = "WINNER";
+            // 
+            // label_winner
+            // 
+            label_winner.AutoSize = true;
+            label_winner.BackColor = Color.Transparent;
+            label_winner.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
+            label_winner.ForeColor = SystemColors.ButtonHighlight;
+            label_winner.Location = new Point(107, 0);
+            label_winner.Name = "label_winner";
+            label_winner.Size = new Size(302, 128);
+            label_winner.TabIndex = 0;
+            label_winner.Text = "label1";
             // 
             // panel3
             // 
@@ -152,46 +218,10 @@
             label_red_score.Text = "0";
             label_red_score.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panel_winner
-            // 
-            panel_winner.BackColor = SystemColors.ActiveCaptionText;
-            panel_winner.BackgroundImage = Properties.Resources.win;
-            panel_winner.BackgroundImageLayout = ImageLayout.Center;
-            panel_winner.Controls.Add(label2);
-            panel_winner.Controls.Add(label_winner);
-            panel_winner.Location = new Point(648, 115);
-            panel_winner.Name = "panel_winner";
-            panel_winner.Size = new Size(612, 406);
-            panel_winner.TabIndex = 3;
-            panel_winner.Visible = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(226, 320);
-            label2.Name = "label2";
-            label2.Size = new Size(433, 128);
-            label2.TabIndex = 1;
-            label2.Text = "WINNER";
-            // 
-            // label_winner
-            // 
-            label_winner.AutoSize = true;
-            label_winner.BackColor = Color.Transparent;
-            label_winner.Font = new Font("Segoe UI Semibold", 72F, FontStyle.Bold, GraphicsUnit.Point);
-            label_winner.ForeColor = SystemColors.ButtonHighlight;
-            label_winner.Location = new Point(107, 0);
-            label_winner.Name = "label_winner";
-            label_winner.Size = new Size(302, 128);
-            label_winner.TabIndex = 0;
-            label_winner.Text = "label1";
-            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.Controls.Add(panelAdvantecBlue);
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(label_blue_name);
             panel2.Controls.Add(label_blue_score);
@@ -199,6 +229,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(776, 207);
             panel2.TabIndex = 1;
+            // 
+            // panelAdvantecBlue
+            // 
+            panelAdvantecBlue.BackColor = Color.Blue;
+            panelAdvantecBlue.BackgroundImage = Properties.Resources.ottopyr_mizinec54;
+            panelAdvantecBlue.BackgroundImageLayout = ImageLayout.Stretch;
+            panelAdvantecBlue.Controls.Add(labelAdvanBlue);
+            panelAdvantecBlue.Location = new Point(229, 149);
+            panelAdvantecBlue.Name = "panelAdvantecBlue";
+            panelAdvantecBlue.Size = new Size(50, 48);
+            panelAdvantecBlue.TabIndex = 5;
+            panelAdvantecBlue.Visible = false;
             // 
             // panel7
             // 
@@ -315,6 +357,16 @@
             timer2.Interval = 1000;
             timer2.Tick += timer2_Tick;
             // 
+            // labelAdvanBlue
+            // 
+            labelAdvanBlue.AutoSize = true;
+            labelAdvanBlue.ForeColor = SystemColors.ControlLightLight;
+            labelAdvanBlue.Location = new Point(35, 1);
+            labelAdvanBlue.Name = "labelAdvanBlue";
+            labelAdvanBlue.Size = new Size(13, 15);
+            labelAdvanBlue.TabIndex = 1;
+            labelAdvanBlue.Text = "0";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -329,11 +381,15 @@
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
+            panelAdvantecRed.ResumeLayout(false);
+            panelAdvantecRed.PerformLayout();
             panel_winner.ResumeLayout(false);
             panel_winner.PerformLayout();
+            panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panelAdvantecBlue.ResumeLayout(false);
+            panelAdvantecBlue.PerformLayout();
             panel7.ResumeLayout(false);
             panel_timer.ResumeLayout(false);
             panel_timer.PerformLayout();
@@ -365,5 +421,9 @@
         private Label label2;
         public Label label_winner;
         public System.Windows.Forms.Timer timer2;
+        public Panel panelAdvantecRed;
+        public Panel panelAdvantecBlue;
+        public Label labelAdvanRed;
+        public Label labelAdvanBlue;
     }
 }
